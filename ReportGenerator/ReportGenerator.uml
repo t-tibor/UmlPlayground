@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_EXz4sJqZEe2xWY99J0B6bA" name="ReportGenerator">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_EYWEMJqZEe2xWY99J0B6bA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_HRQyEJqZEe2xWY99J0B6bA" name="PrintingJobListener" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_LGu845qbEe2xWY99J0B6bA" name="printingjobscheduler" type="_5xPtMJqZEe2xWY99J0B6bA" aggregation="shared" association="_LGu84JqbEe2xWY99J0B6bA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_QU8ZEJqZEe2xWY99J0B6bA" name="ReportDeliverer" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Mrmo85qbEe2xWY99J0B6bA" name="printingjobscheduler" type="_5xPtMJqZEe2xWY99J0B6bA" aggregation="shared" association="_Mrmo8JqbEe2xWY99J0B6bA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_3FwXUJqZEe2xWY99J0B6bA" name="IReportPrinter">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_BCOLAJqbEe2xWY99J0B6bA" name="GenerateReport">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BCOLAZqbEe2xWY99J0B6bA" name="job" type="_c13tkJqaEe2xWY99J0B6bA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BCOLApqbEe2xWY99J0B6bA" name="success" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5xPtMJqZEe2xWY99J0B6bA" name="PrintingJobScheduler">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DWCdMJqaEe2xWY99J0B6bA" name="EnqueJob">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_HI4AMJqbEe2xWY99J0B6bA" name="job" type="_c13tkJqaEe2xWY99J0B6bA"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_YXYwEJqaEe2xWY99J0B6bA" name="DequeueFinishedJob">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_JUI94JqbEe2xWY99J0B6bA" name="job" type="_c13tkJqaEe2xWY99J0B6bA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_c13tkJqaEe2xWY99J0B6bA" name="PrintingJob">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_tW4BwJqaEe2xWY99J0B6bA" name="RawDataPath">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_uzLAoJqaEe2xWY99J0B6bA" name="ReportPath">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_LGu84JqbEe2xWY99J0B6bA" memberEnd="_LGu845qbEe2xWY99J0B6bA _LGz1YJqbEe2xWY99J0B6bA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LGu84ZqbEe2xWY99J0B6bA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LGu84pqbEe2xWY99J0B6bA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_LGz1YJqbEe2xWY99J0B6bA" name="printingjoblistener" type="_HRQyEJqZEe2xWY99J0B6bA" association="_LGu84JqbEe2xWY99J0B6bA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q_guIJqbEe2xWY99J0B6bA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Mrmo8JqbEe2xWY99J0B6bA" memberEnd="_Mrmo85qbEe2xWY99J0B6bA _Mrmo9pqbEe2xWY99J0B6bA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Mrmo8ZqbEe2xWY99J0B6bA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Mrmo8pqbEe2xWY99J0B6bA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Mrmo9pqbEe2xWY99J0B6bA" name="reportdeliverer" type="_QU8ZEJqZEe2xWY99J0B6bA" association="_Mrmo8JqbEe2xWY99J0B6bA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S4qoIJqbEe2xWY99J0B6bA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_cl5icJqbEe2xWY99J0B6bA" name="Send jobs to" client="_5xPtMJqZEe2xWY99J0B6bA" supplier="_3FwXUJqZEe2xWY99J0B6bA"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_MDT4cKJzEe20pY00OHoXqQ" name="UseCases">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_xWVDAKJzEe20pY00OHoXqQ" annotatedElement="_gCJlcKJzEe20pY00OHoXqQ">
+      <body>The MARS batch runner is used&#xD;
+to generate a PDF from a given&#xD;
+XC txt file using a predefined template.&#xD;
+&#xD;
+The XC file shall be stored in the filesystem,&#xD;
+and its path has to be available.&#xD;
+The same is valid for the MARS template.&#xD;
+Also the path of the output PDF report&#xD;
+shall be available, where the MARS&#xD;
+can save the report.</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_FD49UKJ1Ee20pY00OHoXqQ" annotatedElement="_hv0BIKJzEe20pY00OHoXqQ">
+      <body>An external script sends a printing job&#xD;
+using a REST API.&#xD;
+With the POST method the data file and MARS template paths can be defined and optionally the result url (optional).&#xD;
+With GET method the list of the pending/ongoing/ready jobs can be queried.&#xD;
+Every job is identified with its registration time. Also the sender script can specify a custom name, that helps later with the identification.&#xD;
+With GET method the report PDF can be downloaded if the job is in ready state.&#xD;
+The list of the jobs together with its properties are stored in a database, so every job can be tracked later.&#xD;
+The database might implement a retention time, so in case it starts to grow to big the old records can be deleted.&#xD;
+The location of the database might be migrated during lifetime.</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_0zv6MKJ1Ee20pY00OHoXqQ" annotatedElement="_bNotkKJzEe20pY00OHoXqQ">
+      <body>The batch file called XC_CALL_MARS action can be altered so,&#xD;
+that instead of printing the report on the same PC it forwards the parameters&#xD;
+(meas data, MARS template path, output path) as a printing job to the printer service.&#xD;
+These parameters are: path of the temporary measurement file stored on the C drive&#xD;
+of the measurement station PC,path of the MARS template stored on a network folder&#xD;
+accessable by the labor user, and the required output path of the report to be generated.</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_U-K6oKJzEe20pY00OHoXqQ" name="XC_CALL_MARS.bat"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_bNotkKJzEe20pY00OHoXqQ" name="Print report for copied file">
+      <include xmi:type="uml:Include" xmi:id="_rfytcKJzEe20pY00OHoXqQ" addition="_gCJlcKJzEe20pY00OHoXqQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_gCJlcKJzEe20pY00OHoXqQ" name="Generate MARS report"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_hv0BIKJzEe20pY00OHoXqQ" name="Request new report over REST API">
+      <include xmi:type="uml:Include" xmi:id="_sEsxUKJzEe20pY00OHoXqQ" addition="_gCJlcKJzEe20pY00OHoXqQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_1FGlYKJ0Ee20pY00OHoXqQ" client="_U-K6oKJzEe20pY00OHoXqQ" supplier="_bNotkKJzEe20pY00OHoXqQ"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_2AZwAKJ0Ee20pY00OHoXqQ" name="LUA script/C#"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_34XXMKJ0Ee20pY00OHoXqQ" client="_2AZwAKJ0Ee20pY00OHoXqQ" supplier="_hv0BIKJzEe20pY00OHoXqQ"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_58Ee4KJ1Ee20pY00OHoXqQ" name="Simple HTML page"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_8MhekKJ1Ee20pY00OHoXqQ" client="_58Ee4KJ1Ee20pY00OHoXqQ" supplier="_hv0BIKJzEe20pY00OHoXqQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_N_1PgKJzEe20pY00OHoXqQ" name="Requirements"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_QkngcKJzEe20pY00OHoXqQ" name="Model"/>
+</uml:Model>
