@@ -97,5 +97,22 @@ accessable by the labor user, and the required output path of the report to be g
     <packagedElement xmi:type="uml:Usage" xmi:id="_8MhekKJ1Ee20pY00OHoXqQ" client="_58Ee4KJ1Ee20pY00OHoXqQ" supplier="_hv0BIKJzEe20pY00OHoXqQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_N_1PgKJzEe20pY00OHoXqQ" name="Requirements"/>
-  <packagedElement xmi:type="uml:Package" xmi:id="_QkngcKJzEe20pY00OHoXqQ" name="Model"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_QkngcKJzEe20pY00OHoXqQ" name="Model">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_sp9dsKJ3Ee26OZD0fw6pIQ" name="IXcCallMarsBatch">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__bH2oKJ3Ee26OZD0fw6pIQ" name="Execute">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__bH2oaJ3Ee26OZD0fw6pIQ" name="measurementDataPath">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__bH2oqJ3Ee26OZD0fw6pIQ" name="templatePath">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__bH2o6J3Ee26OZD0fw6pIQ" name="outputReportPath">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__bH2pKJ3Ee26OZD0fw6pIQ" name="errorCode" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
 </uml:Model>
